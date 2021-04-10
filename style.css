@@ -1,3 +1,4 @@
+/*-------------------------------GLOBAL-------------------------------*/
 :root{
     --dark-blue: #363f5f;
 }
@@ -7,29 +8,111 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    font-size: 93.75%;
+}
 body{
     background-color: rgb(217, 223, 217);
     font-family: 'Poppins', sans-serif;
 }
+/*-------------------------------TITLE-------------------------------*/
+h2{
+    color: var(--dark-blue);
+    font-weight: normal;
+}
+main section h2{
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
+}
+/*-------------------------------HEADER-------------------------------*/
 header{
     background-color: rgb(37, 75, 24);
     padding: 2rem 0 10rem;
     text-align: center;
 }
-h2{
-    margin-top: 3.2rem;
-    margin-bottom: 0.8rem;
-    color: var(--dark-blue);
-    font-weight: normal;
-}
 #logo{
     color: white;
     font-weight: 100;
 }
+/*-------------------------------BODY-------------------------------*/
 .container{
     width: min(90vw, 800px);
     margin: auto;
 }
+/*Deixa a tag invisível (para acessibilidade)*/
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+/*Formulário para novas transações*/
+.modal-overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+}
+.modal{
+    background-color: #f0f2f5;
+    padding: 2.4rem;
+    border-radius: 0.25rem;
+}
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+input{
+    display: block;
+    padding: 1rem;
+    margin: 1rem     0;
+    border-radius: 0.25rem;
+    border: none;
+    width: 100%;
+}
+form small{
+    opacity: 0.4;
+}
+button{
+    padding: 1rem 5.4rem;
+    border: solid .25px;
+    border-radius: 0.25rem;
+}
+button.cancel{
+    color: rgb(226, 101, 101);
+    background-color: transparent;
+    margin-right: 1rem;
+}
+button.confirm{
+    color: white;
+    border: #49aa26;
+    background-color: #49aa26;
+}
+button.cancel:hover{
+    color: rgb(209, 51, 51);
+    cursor: pointer;
+}
+button.confirm:hover{
+    
+    background-color: #52ca26;
+    cursor: pointer;
+}
+/*-------------------------------BALANCE-------------------------------*/
 #balance{
     margin-top: -8rem;
 }
@@ -47,18 +130,35 @@ h2{
 .card h3{
     font-weight: normal;
     font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .card p{
     font-size: 2rem;
     line-height: 3rem;
     margin-top: 1rem;
 }
-
 .card:nth-child(4){
     background-color: #49aa26;
     color: white;
 }
-
+/*-------------------------------TRANSACTION-------------------------------*/
+#transaction{
+    display: block;
+    overflow-x: auto;
+}
+button.new{
+    color: #49aa26;
+    background-color: rgb(217, 223, 217);
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    padding: 0.5rem 0;
+}
+button.new:hover{
+    color: #3dd705;
+    cursor: pointer;
+}
 #data-table{
     width: 100%;
     border-spacing: 0 0.5rem;
@@ -66,6 +166,9 @@ h2{
 }
 table thead tr th:first-child, table tbody tr td:first-child{
     border-radius: 0.25rem 0 0 0.25rem;
+}
+table thead tr th:last-child, table tbody tr td:last-child{
+    border-radius: 0 0.25rem 0.25rem 0;
 }
 table thead th{
     background-color: white;
@@ -92,14 +195,22 @@ td.income{
 td.expense{
     color: #e92929;
 }
+/*-------------------------------FOOTER-------------------------------*/
 footer{
     text-align: center;
     padding: 4rem 0 2rem;
     color: var(--dark-blue);
     opacity: 0.6;
 }
-.card h3{
+
+
+/*-------------------------------@media-------------------------------*/
+@media (min-width: 768px){
+    html{
+        font-size: 87.5%;
+    }
+    #balance{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    }
 }
