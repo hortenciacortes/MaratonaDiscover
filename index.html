@@ -21,21 +21,21 @@
                     <span>Entradas</span>
                     <img src="./img/entrada.png" alt="Imagem de entrada">
                 </h3>  
-                <p>R$ 5.000,00</p>
+                <p id="incomeDisplay">R$ 0,00</p>
             </div>
             <div class="card">
                 <h3>
                     <span>Saídas</span>
                     <img src="./img/saida.png" alt="Imagem de saída">
                 </h3>
-                <p>R$ 2.000,00</p>
+                <p id="expenseDisplay">R$ 0,00</p>
             </div>
             <div class="card">
                 <h3>
                     <span>Total</span>
                     <img src="./img/total.png" alt="">
                 </h3>
-                <p>R$ 3.000,00</p>
+                <p id="totalDisplay">R$ 0,00</p>
             </div>
         </section>
         <section id="transaction">
@@ -51,36 +51,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="description">Luz</td>
-                        <td class="expense">- R$ 500,00</td>
-                        <td class="date">23/01/2021</td>
-                        <td class="delete">
-                            <a href="#">
-                                <img src="./img/delete.png" alt="Remover transação">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="description">Criação de WebSite</td>
-                        <td class="income">R$ 5.000,00</td>
-                        <td class="date">24/01/2021</td>
-                        <td>
-                            <a href="#">
-                                <img src="./img/delete.png" alt="Remover transação">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="description">Aluguel</td>
-                        <td class="expense">- R$ 1.500,00</td>
-                        <td class="date">26/01/2021</td>
-                        <td>
-                            <a href="">
-                                <img src="./img//delete.png" alt="Remover transação">
-                            </a>
-                        </td>
-                    </tr>
                 </tbody>
             </table>
         </section>
@@ -89,7 +59,7 @@
         <div class="modal">
             <div id="form">
                 <h2>Nova Transação</h2>
-                <form action="" class="formulario">
+                <form action="" class="formulario" onsubmit="Form.submit(event)">
                     <label for="description" class="sr-only">Descrição</label>
                     <input type="text" id="description" name="description" placeholder="Descrição">
                     <label for="amount" class="sr-only"></label>
@@ -97,13 +67,13 @@
                     <small>Use o sinal - (negativo) para despesas e , (virgula) para casas decimais</small>
                     <label for="date" class="sr-only">Data</label>
                     <input type="date" id="date" name="date">
-                    <button class="cancel" onclick="Model.close()">Cancelar</button>
-                    <button class="confirm" onclick="salvar()">Salvar</button>
+                    <button class="cancel" onclick="Modal.close()">Cancelar</button>
+                    <button class="confirm" >Salvar</button>
                 </form>
             </div>
         </div>
     </div>
-    <footer>
+    <footer class="footer">
         <p>@Hortência Côrtes</p>
     </footer>
 
