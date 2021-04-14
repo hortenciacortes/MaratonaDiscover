@@ -23,14 +23,17 @@
     ],
 */
 
+//Abrir e fechar o modal(formulário)
 const Modal = {
     open(){
         document.querySelector('.modal-overlay').classList.add('active');  
-        document.querySelector('footer').classList.add('active');   
+        //Adicionar a class hidden para esconder o footer, pois estava sobrepondo o modal
+        document.querySelector('footer').classList.add('hidden');   
     },
     close(){
         document.querySelector('.modal-overlay').classList.remove('active');
-        document.querySelector('footer').classList.remove('active');
+        //Remover a class hidden para voltar a aparecer o footer
+        document.querySelector('footer').classList.remove('hidden');
     },
 }
 
@@ -214,7 +217,6 @@ const Form = {
         }
     }
 }
-
 
 const App = {
     init(){

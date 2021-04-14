@@ -201,7 +201,7 @@ td.expense{
     opacity: 0.6;
     margin: 2rem 0; 
 }
-.footer.active{
+.footer.hidden{
     visibility: hidden;
 }
 
