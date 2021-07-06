@@ -1,218 +1,257 @@
-/*-------------------------------GLOBAL-------------------------------*/
+/* root */
 :root{
     --dark-blue: #363f5f;
+    --bg-body: #d9dfd9;
+    --bg-green: #254b18;
+    --bg-modal: #000000b3;
+    --ligth-green: #49aa26;
+    --ligth-gray: #f0f2f5;
+    --white: #fff;
+    --red: #d13333;
+    --hover-green: #52ca26;
+    --gray: #969cb3;
+    --income: #12a454;    
+    --ligth-red: #e92929;
 }
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
-    font-size: 93.75%;
-}
 body{
-    background-color: rgb(217, 223, 217);
     font-family: 'Poppins', sans-serif;
+    background: var(--bg-body);
 }
-/*-------------------------------TITLE-------------------------------*/
-h2{
-    color: var(--dark-blue);
-    font-weight: normal;
-}
-main section h2{
-    margin-top: 3.2rem;
-    margin-bottom: 0.8rem;
-}
-/*-------------------------------HEADER-------------------------------*/
-header{
-    background-color: rgb(37, 75, 24);
-    padding: 2rem 0 10rem;
-    text-align: center;
-}
-#logo{
-    color: white;
+/* global*/
+h1{
+    font-family: 'Montserrat', sans-serif;
     font-weight: 100;
+    text-align: center;
+    margin: auto;
+    padding: 2rem;
 }
-/*-------------------------------BODY-------------------------------*/
+h2{
+    font-weight: normal;
+    color: var(--dark-blue);
+    padding-bottom: 1rem;
+}
+button{
+    border: none;
+    background: none;
+    width: 9.5rem;
+    padding: .6rem 0;
+    margin: 1rem 0.25rem 0;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: .25rem;
+}
+button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+/* icones */
+svg{
+    margin: .5rem;
+    color: var(--gray);
+}
+.red{
+    color: var(--ligth-red);
+}
+.green{
+    color: var(--ligth-green);
+}
+.white{
+    color: var(--white);
+}
+.expenses-bg{
+    background: #d1333311;
+}
+.incomes-bg{
+    background: #49aa2611;
+}
+
+/* header */
+header{
+    height: 200px;
+    background: var(--bg-green);
+    color: var(--white);
+
+}
+header span{
+    color: var(--ligth-green);
+    font-weight: bold;
+}
+
+/* container */
 .container{
     width: min(90vw, 800px);
     margin: auto;
+    position: relative;
 }
-/*Deixa a tag invisível (para acessibilidade)*/
-.sr-only{
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-/*Formulário para novas transações*/
-.modal-overlay{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
 
-    position: fixed;
-    top: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    opacity: 0;
-    visibility: hidden;
+/* cards */
+.cards-content{
+    margin-top: -6rem;
 }
-.modal{
-    background-color: #f0f2f5;
-    padding: 2.4rem;
-    border-radius: 0.25rem;
-}
-.modal-overlay.active{
-    opacity: 1;
-    visibility: visible;
-}
-input{
-    display: block;
-    padding: 1rem;
-    margin: 1rem     0;
-    border-radius: 0.25rem;
-    border: none;
-    width: 100%;
-}
-form small{
-    opacity: 0.4;
-}
-button{
-    border: solid .25px;
-    border-radius: 0.25rem;
-    width: 13.2rem;
-    padding: 1rem 0;
-}
-button.cancel{
-    background-color: transparent;
-    color: rgb(226, 101, 101);
-    margin-right: 1rem;
-}
-button.confirm{
-    background-color: #49aa26;
-    color: white;
-    border: #49aa26;
-}
-button.cancel:hover{
-    color: rgb(209, 51, 51);
-    cursor: pointer;
-}
-button.confirm:hover{
-    background-color: #52ca26;
-    cursor: pointer;
-}
-/*-------------------------------BALANCE-------------------------------*/
-#balance{
-    margin-top: -8rem;
-}
-#balance h2{
-    color: white;
-    margin-top: 0;
-}
-.card{
-    background-color: white;
-    padding: 1.5rem 2rem;
-    border-radius: .25rem;
-    margin-bottom: 2rem;
+.cards-content .card{
+    background: var(--white);
     color: var(--dark-blue);
+
+    margin: .5rem 0;
+    padding: 1rem 2rem;
+    border-radius: 0.25rem;
+}
+.card.total{
+    background: var(--ligth-green);
+    color: white;
 }
 .card h3{
-    font-weight: normal;
-    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    font-weight: 300;
+    font-size: 1em;
+    padding-bottom: 1rem;
 }
 .card p{
-    font-size: 2rem;
-    line-height: 3rem;
-    margin-top: 1rem;
+    font-size: 28px;
 }
-.card:nth-child(4){
-    background-color: #49aa26;
-    color: white;
+
+/* transactions */
+.transactions{
+    
+    width: min(90vw, 800px);
 }
-/*-------------------------------TRANSACTION-------------------------------*/
-#transaction{
-    display: block;
-    overflow-x: auto;
+.transactions button{
+    color: var(--ligth-green);
 }
-button.new{
-    color: #49aa26;
-    background-color: rgb(217, 223, 217);
-    font-family: 'Poppins', sans-serif;
-    border: none;
-    padding: 0.5rem 0;
+.transactions button:hover{
+    color: var(--hover-green);
 }
-button.new:hover{
-    color: #3dd705;
-    cursor: pointer;
-}
-#data-table{
+table#data-table{
+    color: var(--gray);
     width: 100%;
+    text-align: left;
     border-spacing: 0 0.5rem;
-    color: #969cb3;
 }
-table thead tr th:first-child, table tbody tr td:first-child{
-    border-radius: 0.25rem 0 0 0.25rem;
-}
-table thead tr th:last-child, table tbody tr td:last-child{
-    border-radius: 0 0.25rem 0.25rem 0;
+table thead th, table tbody td{
+    background: var(--white);
+    padding: .8rem 0rem .8rem .8rem;
 }
 table thead th{
-    background-color: white;
     font-weight: normal;
-    padding: 1rem 2rem;
-    text-align: left;
+    cursor: pointer;
 }
-table tbody tr{
-    opacity: 0.7;
+table p.th{
+    display: flex;
+    align-items: center;
 }
-table tbody tr:hover{
+table thead th:first-child, table tbody td:first-child{
+    border-radius: .25rem 0 0 .25rem;
+}
+a svg{
+    width: 20px;
+    height: 20px;
+}
+
+/* modal */
+.modal-overlay{
+    background: var(--bg-modal);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+
+    visibility: hidden;
+    opacity: 0;
+}
+.modal-overlay.active{
+    visibility: visible;
     opacity: 1;
 }
-table tbody td{
-    background-color: white;
-    padding: 1rem 2rem;
-}
-td.description{
-    color: var(--dark-blue);
-}
-td.income{
-    color: #12a454;
-}
-td.expense{
-    color: #e92929;
-}
-/*-------------------------------FOOTER-------------------------------*/
-.footer{
-    text-align: center;
-    color: var(--dark-blue);
-    opacity: 0.6;
-    margin: 2rem 0; 
-}
-.footer.hidden{
-    visibility: hidden;
-}
-
-
-/*-------------------------------@media-------------------------------*/
-@media (min-width: 768px){
-    html{
-        font-size: 87.5%;
-    }
-    #balance{
+.modal{
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+/* formulário */
+.formulario{
+    background: var(--ligth-gray);
+    margin: 0 1rem;
+    padding: 2rem;
+    border-radius: 0.25rem;
+}
+.formulario input{
+    margin: .5rem 0;
+    padding: .5rem;
+    border: none;
+    border-radius: .25rem;
+    font-size: 16px;
+    width: 100%;
+}
+.formulario p{
+    font-size: 12px;
+    opacity: 0.4;
+    padding: .25rem 0;
+}
+/* tipo de transação */
+.typeTransactions, .type{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.typeTransactions label{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.typeTransactions input[type="radio"]{
+    visibility: hidden;
+    opacity: 0;
+}
+/* botões do formulario */
+.form-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+button.cancel{
+    border: 1px solid var(--red);
+    color: var(--red);
+}
+button.confirm{
+    background: var(--ligth-green);
+    border: 1px solid var(--ligth-green);
+    color: var(--white);
+}
+button.cancel:hover{
+    border: 1px solid var(--ligth-red);
+    color: var(--ligth-red);
+}
+button.confirm:hover{
+    background: var(--hover-green);
+    border: 1px solid var(--hover-green);
+}
+/* footer */
+footer p{
+    text-align: center;
+    color: var(--gray);
+    padding: 2rem;
+}
+
+/* responsive */
+@media (min-width: 768px){
+    .cards-content{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+@media (max-width: 480px){
+    table#data-table{
+        font-size: .8em;
     }
 }
