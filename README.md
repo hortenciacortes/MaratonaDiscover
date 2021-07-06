@@ -1,7 +1,7 @@
 # dev.finance$
 
 ## 🎬 Imagens do projeto
-
+![enter image description here](https://github.com/HortenciaCorts/MaratonaDiscover/blob/main/dev.finance.gif?raw=true)
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
@@ -20,4 +20,3 @@ Bibliotecas / Utilitários
 
  - Projeto inicial desenvolvido na plataforma da Rocketseat na Maratona Discover. Projeto incial:
 	> O dev.finances é uma aplicação de controle financeiro, onde é possível cadastrar e excluir transações e ver o saldo de entrada e saída 💰
-
