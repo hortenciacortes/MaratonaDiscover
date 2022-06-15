@@ -1,257 +1,300 @@
 /* root */
-:root{
-    --dark-blue: #363f5f;
-    --bg-body: #d9dfd9;
-    --bg-green: #254b18;
-    --bg-modal: #000000b3;
-    --ligth-green: #49aa26;
-    --ligth-gray: #f0f2f5;
-    --white: #fff;
-    --red: #d13333;
-    --hover-green: #52ca26;
-    --gray: #969cb3;
-    --income: #12a454;    
-    --ligth-red: #e92929;
+:root {
+  --dark-blue: #363f5f;
+  --bg-body: #d9dfd9;
+  --bg-green: #254b18;
+  --bg-modal: #000000b3;
+  --ligth-green: #49aa26;
+  --ligth-gray: #f0f2f5;
+  --white: #fff;
+  --red: #d13333;
+  --hover-green: #52ca26;
+  --gray: #969cb3;
+  --income: #12a454;
+  --ligth-red: #e92929;
 }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    font-family: 'Poppins', sans-serif;
-    background: var(--bg-body);
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-body);
 }
+
 /* global*/
-h1{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 100;
-    text-align: center;
-    margin: auto;
-    padding: 2rem;
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  text-align: center;
+  margin: auto;
+  padding: 2rem;
 }
-h2{
-    font-weight: normal;
-    color: var(--dark-blue);
-    padding-bottom: 1rem;
+
+h2 {
+  font-weight: normal;
+  color: var(--dark-blue);
+  padding-bottom: 1rem;
 }
-button{
-    border: none;
-    background: none;
-    width: 9.5rem;
-    padding: .6rem 0;
-    margin: 1rem 0.25rem 0;
-    font-size: 14px;
-    font-family: 'Poppins', sans-serif;
-    border-radius: .25rem;
+
+button {
+  border: none;
+  background: none;
+  width: 9.5rem;
+  padding: .6rem 0;
+  margin: 1rem 0.25rem 0;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  border-radius: .25rem;
 }
-button:hover{
-    transform: scale(1.1);
-    cursor: pointer;
+
+button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
+
 /* icones */
-svg{
-    margin: .5rem;
-    color: var(--gray);
+svg {
+  margin: .5rem;
+  color: var(--gray);
 }
-.red{
-    color: var(--ligth-red);
+
+.red {
+  color: var(--ligth-red);
 }
-.green{
-    color: var(--ligth-green);
+
+.green {
+  color: var(--ligth-green);
 }
-.white{
-    color: var(--white);
+
+.white {
+  color: var(--white);
 }
-.expenses-bg{
-    background: #d1333311;
+
+.expenses-bg {
+  background: #d1333311;
 }
-.incomes-bg{
-    background: #49aa2611;
+
+.incomes-bg {
+  background: #49aa2611;
 }
 
 /* header */
-header{
-    height: 200px;
-    background: var(--bg-green);
-    color: var(--white);
+header {
+  height: 200px;
+  background: var(--bg-green);
+  color: var(--white);
 
 }
-header span{
-    color: var(--ligth-green);
-    font-weight: bold;
+
+header span {
+  color: var(--ligth-green);
+  font-weight: bold;
 }
 
 /* container */
-.container{
-    width: min(90vw, 800px);
-    margin: auto;
-    position: relative;
+.container {
+  width: min(90vw, 800px);
+  margin: auto;
+  position: relative;
 }
 
 /* cards */
-.cards-content{
-    margin-top: -6rem;
+.cards-content {
+  margin-top: -6rem;
 }
-.cards-content .card{
-    background: var(--white);
-    color: var(--dark-blue);
 
-    margin: .5rem 0;
-    padding: 1rem 2rem;
-    border-radius: 0.25rem;
-}
-.card.total{
-    background: var(--ligth-green);
-    color: white;
-}
-.card h3{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.cards-content .card {
+  background: var(--white);
+  color: var(--dark-blue);
 
-    font-weight: 300;
-    font-size: 1em;
-    padding-bottom: 1rem;
+  margin: .5rem 0;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
 }
-.card p{
-    font-size: 28px;
+
+.card.total {
+  background: var(--ligth-green);
+  color: white;
+}
+
+.card h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-weight: 300;
+  font-size: 1em;
+  padding-bottom: 1rem;
+}
+
+.card p {
+  font-size: 28px;
 }
 
 /* transactions */
-.transactions{
-    
-    width: min(90vw, 800px);
+.transactions {
+
+  width: min(90vw, 800px);
 }
-.transactions button{
-    color: var(--ligth-green);
+
+.transactions button {
+  color: var(--ligth-green);
 }
-.transactions button:hover{
-    color: var(--hover-green);
+
+.transactions button:hover {
+  color: var(--hover-green);
 }
-table#data-table{
-    color: var(--gray);
-    width: 100%;
-    text-align: left;
-    border-spacing: 0 0.5rem;
+
+table#data-table {
+  color: var(--gray);
+  width: 100%;
+  text-align: left;
+  border-spacing: 0 0.5rem;
 }
-table thead th, table tbody td{
-    background: var(--white);
-    padding: .8rem 0rem .8rem .8rem;
+
+table thead th,
+table tbody td {
+  background: var(--white);
+  padding: .8rem 0rem .8rem .8rem;
 }
-table thead th{
-    font-weight: normal;
-    cursor: pointer;
+
+table thead th {
+  font-weight: normal;
+  cursor: pointer;
 }
-table p.th{
-    display: flex;
-    align-items: center;
+
+table p.th {
+  display: flex;
+  align-items: center;
 }
-table thead th:first-child, table tbody td:first-child{
-    border-radius: .25rem 0 0 .25rem;
+
+table thead th:first-child,
+table tbody td:first-child {
+  border-radius: .25rem 0 0 .25rem;
 }
-a svg{
-    width: 20px;
-    height: 20px;
+
+a svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* modal */
-.modal-overlay{
-    background: var(--bg-modal);
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
+.modal-overlay {
+  background: var(--bg-modal);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
 
-    visibility: hidden;
-    opacity: 0;
+  visibility: hidden;
+  opacity: 0;
 }
-.modal-overlay.active{
-    visibility: visible;
-    opacity: 1;
+
+.modal-overlay.active {
+  visibility: visible;
+  opacity: 1;
 }
-.modal{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
+
 /* formulário */
-.formulario{
-    background: var(--ligth-gray);
-    margin: 0 1rem;
-    padding: 2rem;
-    border-radius: 0.25rem;
+.formulario {
+  background: var(--ligth-gray);
+  margin: 0 1rem;
+  padding: 2rem;
+  border-radius: 0.25rem;
 }
-.formulario input{
-    margin: .5rem 0;
-    padding: .5rem;
-    border: none;
-    border-radius: .25rem;
-    font-size: 16px;
-    width: 100%;
+
+.formulario input {
+  margin: .5rem 0;
+  padding: .5rem;
+  border: none;
+  border-radius: .25rem;
+  font-size: 16px;
+  width: 100%;
 }
-.formulario p{
-    font-size: 12px;
-    opacity: 0.4;
-    padding: .25rem 0;
+
+.formulario p {
+  font-size: 12px;
+  opacity: 0.4;
+  padding: .25rem 0;
 }
+
 /* tipo de transação */
-.typeTransactions, .type{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+.typeTransactions,
+.type {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
-.typeTransactions label{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+
+.typeTransactions label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
-.typeTransactions input[type="radio"]{
-    visibility: hidden;
-    opacity: 0;
+
+.typeTransactions input[type="radio"] {
+  visibility: hidden;
+  opacity: 0;
 }
+
 /* botões do formulario */
-.form-buttons{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+.form-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
-button.cancel{
-    border: 1px solid var(--red);
-    color: var(--red);
+
+button.cancel {
+  border: 1px solid var(--red);
+  color: var(--red);
 }
-button.confirm{
-    background: var(--ligth-green);
-    border: 1px solid var(--ligth-green);
-    color: var(--white);
+
+button.confirm {
+  background: var(--ligth-green);
+  border: 1px solid var(--ligth-green);
+  color: var(--white);
 }
-button.cancel:hover{
-    border: 1px solid var(--ligth-red);
-    color: var(--ligth-red);
+
+button.cancel:hover {
+  border: 1px solid var(--ligth-red);
+  color: var(--ligth-red);
 }
-button.confirm:hover{
-    background: var(--hover-green);
-    border: 1px solid var(--hover-green);
+
+button.confirm:hover {
+  background: var(--hover-green);
+  border: 1px solid var(--hover-green);
 }
+
 /* footer */
-footer p{
-    text-align: center;
-    color: var(--gray);
-    padding: 2rem;
+footer p {
+  text-align: center;
+  color: var(--gray);
+  padding: 2rem;
 }
 
 /* responsive */
-@media (min-width: 768px){
-    .cards-content{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-    }
+@media (min-width: 768px) {
+  .cards-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 }
-@media (max-width: 480px){
-    table#data-table{
-        font-size: .8em;
-    }
+
+@media (max-width: 480px) {
+  table#data-table {
+    font-size: .8em;
+  }
 }

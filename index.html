@@ -1,110 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dev.finance$</title>
-    
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&family=Poppins:wght@100;300;400;600&display=swap" rel="stylesheet">
-    
-    <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dev.finance$</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&family=Poppins:wght@100;300;400;600&display=swap"
+    rel="stylesheet">
+
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <h1>dev.finance<span>$</span></h1>
-    </header>
-    <main class="container">
-        <section class="cards-content">
-            <div class="card">
-                <h3>
-                    Entradas
-                    <i data-feather="arrow-up-circle" class="green"></i>
-                </h3>
-                <p id="incomes">R$ 0,00</p>
-            </div>
-            <div class="card">
-                <h3>
-                    Saídas
-                    <i data-feather="arrow-down-circle" class="red"></i>
-                </h3>
-                <p id="expenses">R$ 0,00</p>
-            </div>
-            <div class="card total">
-                <h3>
-                    Total
-                    <i class="white" data-feather="dollar-sign"></i>
-                </h3>
-                <p id="total">R$ 0,00</p>
-            </div>
-        </section>
-        <section class="transactions">
-            <button id="new-transaction">+ Nova Transação</button>
-            <table id="data-table">
-                <thead>
-                    <tr>
-                        <th id="thDescription">
-                            <p class="th">
-                                Descrição
-                                <i data-feather="chevron-down"></i>
-                            </p>
-                        </th>
-                        <th id="thAmount">
-                            <p class="th">
-                                Valor
-                                <i data-feather="chevron-down"></i>
-                            </p>
-                        </th>
-                        <th id="thDate">
-                            <p class="th">
-                                Data
-                                <i data-feather="chevron-down"></i>
-                            </p>
-                        </th>
-                        <th class="th"></th>
-                    </tr>
-                </thead>
-                <tbody>      
-                </tbody>
-            </table>
-        </section>
-    </main>
-    <div class="modal-overlay">
-        <div class="modal">
-                <form action="" class="formulario" onsubmit="Form.submit(event)">
-                    <h2>Nova Transação</h2>
-                    <div class="typeTransactions">
-                        <div class="type">
-                            <input type="radio" name="typeTransaction" id="typeExpenses">
-                            <label for="typeExpenses" class="typeExpenses">Saída
-                                <i data-feather="arrow-down-circle" class="red"></i>
-                            </label>
-                        </div>
-                        <div class="type">
-                            <input type="radio" name="typeTransaction" id="typeIncomes">
-                            <label for="typeIncomes" class="typeIncomes green">Entrada
-                                <i data-feather="arrow-up-circle" class="green"></i>
-                            </label>
-                        </div>
-                    </div>
-                    <input class="input incomes-bg" type="text" id="description" placeholder="Descrição">
-                    <input class="input incomes-bg" type="number" id="amount" placeholder="0,00" step="0.1">
-                    <p>Use o sinal - (negativo) para despesas e , (virgula) para casas decimais</p>
-                    <input class="input incomes-bg" type="date" id="date">
-                    <div class="form-buttons">
-                        <button class="cancel">Cancelar</button>
-                        <button class="confirm" onclick="Form.submit(event)">Salvar</button>
-                    </div>
-                </form>
+  <header>
+    <h1>dev.finance<span>$</span></h1>
+  </header>
+  <main class="container">
+    <section class="cards-content">
+      <div class="card">
+        <h3>
+          Entradas
+          <i data-feather="arrow-up-circle" class="green"></i>
+        </h3>
+        <p id="incomes">R$ 0,00</p>
+      </div>
+      <div class="card">
+        <h3>
+          Saídas
+          <i data-feather="arrow-down-circle" class="red"></i>
+        </h3>
+        <p id="expenses">R$ 0,00</p>
+      </div>
+      <div class="card total">
+        <h3>
+          Total
+          <i class="white" data-feather="dollar-sign"></i>
+        </h3>
+        <p id="total">R$ 0,00</p>
+      </div>
+    </section>
+    <section class="transactions">
+      <button id="new-transaction">+ Nova Transação</button>
+      <table id="data-table">
+        <thead>
+          <tr>
+            <th id="thDescription">
+              <p class="th">
+                Descrição
+                <i data-feather="chevron-down"></i>
+              </p>
+            </th>
+            <th id="thAmount">
+              <p class="th">
+                Valor
+                <i data-feather="chevron-down"></i>
+              </p>
+            </th>
+            <th id="thDate">
+              <p class="th">
+                Data
+                <i data-feather="chevron-down"></i>
+              </p>
+            </th>
+            <th class="th"></th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <div class="modal-overlay">
+    <div class="modal">
+      <form action="" class="formulario" onsubmit="Form.submit(event)">
+        <h2>Nova Transação</h2>
+        <div class="typeTransactions">
+          <div class="type">
+            <input type="radio" name="typeTransaction" id="typeExpenses">
+            <label for="typeExpenses" class="typeExpenses">Saída
+              <i data-feather="arrow-down-circle" class="red"></i>
+            </label>
+          </div>
+          <div class="type">
+            <input type="radio" name="typeTransaction" id="typeIncomes">
+            <label for="typeIncomes" class="typeIncomes green">Entrada
+              <i data-feather="arrow-up-circle" class="green"></i>
+            </label>
+          </div>
         </div>
+        <input class="input incomes-bg" type="text" id="description" placeholder="Descrição">
+        <input class="input incomes-bg" type="number" id="amount" placeholder="0,00" step="0.1">
+        <p>Use o sinal - (negativo) para despesas e , (virgula) para casas decimais</p>
+        <input class="input incomes-bg" type="date" id="date">
+        <div class="form-buttons">
+          <button class="cancel">Cancelar</button>
+          <button class="confirm" onclick="Form.submit(event)">Salvar</button>
+        </div>
+      </form>
     </div>
-    <footer>                              
-        <p>@Hortência Côrtes</p>
-    </footer>
-    <script src="./script.js"></script>
+  </div>
+  <footer>
+    <p>@Hortência Côrtes</p>
+  </footer>
+  <script src="./script.js"></script>
 </body>
+
 </html>
