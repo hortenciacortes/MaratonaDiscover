@@ -14,7 +14,7 @@ export const DOM = {
     DOM.transactionsContainer.appendChild(tr);
   },
   innerHTMLTransaction(transaction, index) {
-    const CSSclass = transaction.amount > 0 ? "green" : "red";
+    const CSSclass = transaction.amount > 0 ? "incomes" : "expenses";
     const amount = Utils.formatCurrency(transaction.amount);
     const html = `
     <td class="oi">${transaction.description}</td>

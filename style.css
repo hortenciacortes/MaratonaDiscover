@@ -62,11 +62,11 @@ svg {
   color: var(--gray);
 }
 
-.red {
+.expenses {
   color: var(--ligth-red);
 }
 
-.green {
+.incomes {
   color: var(--ligth-green);
 }
 

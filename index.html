@@ -27,14 +27,14 @@
       <div class="card">
         <h3>
           Entradas
-          <i data-feather="arrow-up-circle" class="green"></i>
+          <i data-feather="arrow-up-circle" class="incomes"></i>
         </h3>
         <p id="incomes">R$ 0,00</p>
       </div>
       <div class="card">
         <h3>
           Saídas
-          <i data-feather="arrow-down-circle" class="red"></i>
+          <i data-feather="arrow-down-circle" class="expenses"></i>
         </h3>
         <p id="expenses">R$ 0,00</p>
       </div>
@@ -79,19 +79,19 @@
   </main>
   <div class="modal-overlay">
     <div class="modal">
-      <form action="" class="formulario" onsubmit="Form.submit(event)">
+      <form action="" class="formulario">
         <h2>Nova Transação</h2>
         <div class="typeTransactions">
           <div class="type">
             <input type="radio" name="typeTransaction" id="typeExpenses">
             <label for="typeExpenses" class="typeExpenses">Saída
-              <i data-feather="arrow-down-circle" class="red"></i>
+              <i data-feather="arrow-down-circle" class="expenses"></i>
             </label>
           </div>
           <div class="type">
             <input type="radio" name="typeTransaction" id="typeIncomes">
-            <label for="typeIncomes" class="typeIncomes green">Entrada
-              <i data-feather="arrow-up-circle" class="green"></i>
+            <label for="typeIncomes" class="typeIncomes incomes">Entrada
+              <i data-feather="arrow-up-circle" class="incomes"></i>
             </label>
           </div>
         </div>

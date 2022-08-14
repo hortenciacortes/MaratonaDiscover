@@ -1,6 +1,6 @@
 import { Order } from "./scripts/Order.js";
 import { App } from "./scripts/App.js";
-import { Classes } from "./scripts/Classes.js";
+import { typeTransaction } from "./scripts/typeTransaction.js";
 import { Form } from "./scripts/Form.js";
 import { Modal } from "./scripts/Modal.js";
 import { Transaction } from "./scripts/Transaction.js";
@@ -25,7 +25,10 @@ document.querySelectorAll('.edit').forEach((item, index) => {
 });
 
 document.querySelector('.confirm').addEventListener('click', Form.submit)
+document.querySelector('.formulario').addEventListener('submit', Form.submit)
 
-
-Classes.typeIncomes.addEventListener('click', Classes.activeIncomes);
-Classes.typeExpenses.addEventListener('click', Classes.activeExpenses);
+/**
+ * Change classes according to transaction type selected
+ */
+typeTransaction.incomes.addEventListener('click', () => typeTransaction.changeType('incomes', typeTransaction.incomes));
+typeTransaction.expenses.addEventListener('click', () => typeTransaction.changeType('expenses', typeTransaction.expenses));
