@@ -1,14 +1,8 @@
-
-//Sinal do tipo de operação selecionada no modal (incomes(+)/expenses(-))
-
 import { App } from "./App.js";
 import { Modal } from "./Modal.js";
 import { Transaction } from "./Transaction.js";
 import { Utils } from "./Utils.js";
-// import { Form } from "./Form";
 
-//para adicionar o valor negativo caso seja um valor de saída 
-let signal = "";
 let id = 0;
 let idEdit = 0;
 
@@ -16,7 +10,9 @@ export const Form = {
   description: document.querySelector('input#description'),
   amount: document.querySelector('input#amount'),
   date: document.querySelector('input#date'),
+  
   getValues() {
+    const signal = document.querySelector('.typeIncomes.green') !== null ? "" : "-";
     return {
       description: Form.description.value,
       amount: signal + Form.amount.value,

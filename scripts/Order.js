@@ -1,5 +1,5 @@
-import { App } from "./scripts/App.js";
-import { Transaction } from "./scripts/Transaction.js";
+import { App } from "./App.js";
+import { Transaction } from "./Transaction.js";
 
 //Variável para mudar a ordem (crescente e decrescente) da visualização das transações
 let order = 'crescent';

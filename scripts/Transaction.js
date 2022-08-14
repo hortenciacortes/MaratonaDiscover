@@ -1,4 +1,4 @@
-import { Order } from "../Order.js";
+import { Order } from "./Order.js";
 import { App } from "./App.js";
 import { DOM } from "./Dom.js";
 import { Form } from "./Form.js";
