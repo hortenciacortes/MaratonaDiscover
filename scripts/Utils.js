@@ -42,11 +42,9 @@ export const Utils = {
    * @returns formated dollar currency (string)
    */
   realToDolar(value){
-    console.log(value)
     value = value.replace('R$ ', '');
     value = value.replace('.', '');
     value = value.replace(',', '.');
-    console.log(value.trim())
     return value.trim();
   }
 }

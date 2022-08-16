@@ -22,7 +22,6 @@ export const Transaction = {
     App.reload();
   },
   edit(index) {
-    console.log(index)
     Form.fields(Transaction.all[index]);
     idEdit = Transaction.all[index].id;
 
