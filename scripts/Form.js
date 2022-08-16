@@ -19,12 +19,14 @@ export const Form = {
       date: Form.date.value,
     }
   },
+  
   validateFields() {
     const { description, amount, date } = Form.getValues();
     if (description === '' || amount.trim() === '' || date === '') {
       throw new Error('Por favor, preencha todos os campos');
     }
   },
+
   formatValues() {
     let { description, amount, date } = Form.getValues();
     amount = Utils.realToDolar(amount);
@@ -41,11 +43,13 @@ export const Form = {
       date,
     }
   },
+
   clearFields() {
     Form.description.value = '';
     Form.amount.value = '';
     Form.date.value = '';
   },
+
   fields(value) {
     Form.description.value = value.description;
     if (value.amount < 0) {
@@ -55,6 +59,7 @@ export const Form = {
     Form.amount.value = Utils.formatAmountForm(value.amount);
     Form.date.value = Utils.formatDateForm(value.date);
   },
+  
   submit(event) {
     event.preventDefault();
     try {
@@ -62,7 +67,7 @@ export const Form = {
       const transaction = Form.formatValues();
       Transaction.add(transaction)
       Form.clearFields();
-      Modal.openClose();
+      Modal.toggleModal();
       App.reload();
 
     } catch (error) {

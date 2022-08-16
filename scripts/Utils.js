@@ -43,7 +43,7 @@ export const Utils = {
    */
   realToDolar(value){
     console.log(value)
-    value = value.replace('R$', '');
+    value = value.replace('R$ ', '');
     value = value.replace('.', '');
     value = value.replace(',', '.');
     console.log(value.trim())

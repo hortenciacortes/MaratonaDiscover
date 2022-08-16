@@ -29,7 +29,7 @@ export const Transaction = {
     DOM.addTransaction(Transaction.all[index], Transaction.all[index].id)
     Transaction.remove(index);
 
-    Modal.openClose();
+    Modal.toggleModal();
   },
   incomes() {
     //somar as entradas

@@ -1,13 +1,29 @@
-import { App } from "./App.js"
+import { Form } from "./Form.js"
 
 export const Modal = {
-  //Variáveis que irão chamar as funções de click
+  /**
+   * Variables that will call click functions
+   */
   newTransaction: document.querySelector('#new-transaction'),
-  btnCancel: document.querySelector('.cancel'),
+  overlay: document.querySelector('.modal-overlay'),
 
-  //Função para abrir e fechar o modal
-  openClose() {
+  /**
+   * Toggle modal
+   */
+  toggleModal() {
     document.querySelector('.modal-overlay').classList.toggle('active')
-    App.reload()
   },
+  
+  /**
+   * Handle with modal
+   * if click on the confirm button then the submit form function is called
+   * if click on the cancel or in modal overlay then the toggle modal function is called
+   */
+  handleModal(event) {
+    if (event.target.classList.value === 'confirm') {
+      Form.submit(event)
+    } else if (event.target.parentElement === this || event.target.classList.value === 'cancel') {
+      Modal.toggleModal()
+    }
+  }
 }

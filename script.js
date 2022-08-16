@@ -7,6 +7,7 @@ import { Transaction } from "./scripts/Transaction.js";
 import { Utils } from "./scripts/Utils.js";
 
 feather.replace();
+
 /**
  * Formatting input with the value for Brazilian currency
  */
@@ -14,8 +15,11 @@ Form.amount.addEventListener('input', (event) => {
   event.target.value = Utils.formatCurrency(event.target.value);
 })
 
-Modal.newTransaction.addEventListener('click', Modal.openClose);
-Modal.btnCancel.addEventListener('click', Modal.openClose);
+/**
+ * Toggle modal
+ */
+Modal.newTransaction.addEventListener('click', Modal.toggleModal);
+Modal.overlay.addEventListener('click', Modal.handleModal);
 
 Order.thDescription.addEventListener('click', Order.description);
 Order.thAmount.addEventListener('click', Order.amount);
@@ -31,8 +35,6 @@ document.querySelectorAll('.edit').forEach((item, index) => {
   item.addEventListener('click', () => Transaction.edit(index))
 });
 
-document.querySelector('.confirm').addEventListener('click', Form.submit)
-document.querySelector('.formulario').addEventListener('submit', Form.submit)
 
 /**
  * Change classes according to transaction type selected
