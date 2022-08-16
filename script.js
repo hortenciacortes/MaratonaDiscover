@@ -4,8 +4,15 @@ import { typeTransaction } from "./scripts/typeTransaction.js";
 import { Form } from "./scripts/Form.js";
 import { Modal } from "./scripts/Modal.js";
 import { Transaction } from "./scripts/Transaction.js";
+import { Utils } from "./scripts/Utils.js";
 
 feather.replace();
+/**
+ * Formatting input with the value for Brazilian currency
+ */
+Form.amount.addEventListener('input', (event) => {
+  event.target.value = Utils.formatCurrency(event.target.value);
+})
 
 Modal.newTransaction.addEventListener('click', Modal.openClose);
 Modal.btnCancel.addEventListener('click', Modal.openClose);

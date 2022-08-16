@@ -12,7 +12,7 @@ export const Form = {
   date: document.querySelector('input#date'),
   
   getValues() {
-    const signal = document.querySelector('.typeIncomes.green') !== null ? "" : "-";
+    const signal = document.querySelector('.typeIncomes.incomes') !== null ? '' : '-';
     return {
       description: Form.description.value,
       amount: signal + Form.amount.value,
@@ -21,13 +21,13 @@ export const Form = {
   },
   validateFields() {
     const { description, amount, date } = Form.getValues();
-    if (description === "" || amount.trim() === "" || date === "") {
+    if (description === '' || amount.trim() === '' || date === '') {
       throw new Error('Por favor, preencha todos os campos');
     }
   },
   formatValues() {
     let { description, amount, date } = Form.getValues();
-    amount = Utils.formatAmount(amount);
+    amount = Utils.realToDolar(amount);
     date = Utils.formatDate(date);
     if (idEdit !== 0) {
       id = idEdit;
@@ -42,15 +42,15 @@ export const Form = {
     }
   },
   clearFields() {
-    Form.description.value = "";
-    Form.amount.value = "";
-    Form.date.value = "";
+    Form.description.value = '';
+    Form.amount.value = '';
+    Form.date.value = '';
   },
   fields(value) {
     Form.description.value = value.description;
     if (value.amount < 0) {
       Classes.activeExpenses();
-      value.amount = String(value.amount).replace(/\D/g, "");
+      value.amount = String(value.amount).replace(/\D/g, '');
     }
     Form.amount.value = Utils.formatAmountForm(value.amount);
     Form.date.value = Utils.formatDateForm(value.date);
