@@ -53,7 +53,7 @@ export const Form = {
   fields(value) {
     Form.description.value = value.description;
     if (value.amount < 0) {
-      Classes.activeExpenses();
+      TypeTransaction.changeType();
       value.amount = String(value.amount).replace(/\D/g, '');
     }
     Form.amount.value = Utils.formatAmountForm(value.amount);

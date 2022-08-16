@@ -1,6 +1,6 @@
 import { Order } from "./scripts/Order.js";
 import { App } from "./scripts/App.js";
-import { typeTransaction } from "./scripts/typeTransaction.js";
+import { TypeTransaction } from "./scripts/TypeTransaction.js";
 import { Form } from "./scripts/Form.js";
 import { Modal } from "./scripts/Modal.js";
 import { Transaction } from "./scripts/Transaction.js";
@@ -39,5 +39,5 @@ document.querySelectorAll('.edit').forEach((item, index) => {
 /**
  * Change classes according to transaction type selected
  */
-typeTransaction.incomes.addEventListener('click', () => typeTransaction.changeType('incomes', typeTransaction.incomes));
-typeTransaction.expenses.addEventListener('click', () => typeTransaction.changeType('expenses', typeTransaction.expenses));
+ TypeTransaction.incomes.addEventListener('click', () => TypeTransaction.changeType('incomes', TypeTransaction.incomes));
+ TypeTransaction.expenses.addEventListener('click', () => TypeTransaction.changeType('expenses', TypeTransaction.expenses));

@@ -3,7 +3,7 @@
  * @param valueType - type transaction - incomes/expenses (string)
  * @param activeType - element HTML of type transaction (string)
  */
-export const typeTransaction = {
+export const TypeTransaction = {
   expenses: document.querySelector('.typeExpenses'),
   incomes: document.querySelector('.typeIncomes'),
 
