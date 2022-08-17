@@ -1,6 +1,7 @@
 import { App } from "./App.js";
 import { Modal } from "./Modal.js";
 import { Transaction } from "./Transaction.js";
+import { TypeTransaction } from "./TypeTransaction.js";
 import { Utils } from "./Utils.js";
 
 let id = 0;
@@ -19,7 +20,7 @@ export const Form = {
       date: Form.date.value,
     }
   },
-  
+
   validateFields() {
     const { description, amount, date } = Form.getValues();
     if (description === '' || amount.trim() === '' || date === '') {
@@ -53,7 +54,7 @@ export const Form = {
   fields(value) {
     Form.description.value = value.description;
     if (value.amount < 0) {
-      TypeTransaction.changeType();
+      TypeTransaction.changeType('expenses', TypeTransaction.expenses);
       value.amount = String(value.amount).replace(/\D/g, '');
     }
     Form.amount.value = Utils.formatAmountForm(value.amount);
