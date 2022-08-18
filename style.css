@@ -64,6 +64,7 @@ svg {
 
 .expenses {
   color: var(--ligth-red);
+  white-space: nowrap;
 }
 
 .incomes {
@@ -296,5 +297,16 @@ footer p {
 @media (max-width: 480px) {
   table#data-table {
     font-size: .8em;
+  }
+
+  table thead th,
+  table tbody td {
+    padding-left: 4px;
+  }
+}
+
+@media (max-width: 320px) {
+  .container{
+    width: min(95vw, 800px);
   }
 }
