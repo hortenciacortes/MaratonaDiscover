@@ -4,15 +4,12 @@ import { Form } from "./Form.js";
 import { Modal } from "./Modal.js";
 import { Storage } from "./Storage.js";
 
-let order = 'crescent';
-
 export const Transaction = {
   all: Storage.get(),
   editId: 0,
 
   add(transaction) {
     Transaction.all.push(transaction);
-    order = 'crescent';
     Order.description()
     App.reload();
   },
@@ -30,7 +27,6 @@ export const Transaction = {
   },
 
   incomes() {
-    //somar as entradas
     let income = 0;
     Transaction.all.forEach(function (transaction) {
       if (transaction.amount > 0) {
@@ -41,7 +37,6 @@ export const Transaction = {
   },
 
   expenses() {
-    //somar as saídas
     let expense = 0;
     Transaction.all.forEach(function (transaction) {
       if (transaction.amount < 0) {
@@ -52,7 +47,6 @@ export const Transaction = {
   },
 
   total() {
-    //entradas - saídas
     return (+Transaction.incomes() + +Transaction.expenses()).toFixed(2);
   }
 }

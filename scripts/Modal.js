@@ -1,15 +1,10 @@
 import { Form } from "./Form.js"
 
 export const Modal = {
-  /**
-   * Variables that will call click functions
-   */
+  /** Variables that will call click function */
   newTransaction: document.querySelector('#new-transaction'),
   overlay: document.querySelector('.modal-overlay'),
 
-  /**
-   * Toggle modal
-   */
   toggleModal() {
     document.querySelector('.modal-overlay').classList.toggle('active')
   },
