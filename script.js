@@ -27,17 +27,9 @@ Order.thDate.addEventListener('click', Order.date);
 
 App.init();
 
-document.querySelectorAll('.remove').forEach((item, index) => {
-  item.addEventListener('click', () => Transaction.remove(index))
-});
-
-document.querySelectorAll('.edit').forEach((item, index) => {
-  item.addEventListener('click', () => Transaction.edit(index))
-});
-
-
 /**
  * Change classes according to transaction type selected
  */
  TypeTransaction.incomes.addEventListener('click', () => TypeTransaction.changeType('incomes', TypeTransaction.incomes));
  TypeTransaction.expenses.addEventListener('click', () => TypeTransaction.changeType('expenses', TypeTransaction.expenses));
+ 

@@ -1,15 +1,14 @@
 import { Order } from "./Order.js";
 import { App } from "./App.js";
-import { DOM } from "./Dom.js";
 import { Form } from "./Form.js";
 import { Modal } from "./Modal.js";
 import { Storage } from "./Storage.js";
 
-let idEdit = 0;
 let order = 'crescent';
 
 export const Transaction = {
   all: Storage.get(),
+  editId: 0,
 
   add(transaction) {
     Transaction.all.push(transaction);
@@ -17,19 +16,19 @@ export const Transaction = {
     Order.description()
     App.reload();
   },
+
   remove(index) {
     Transaction.all.splice(index, 1);
     App.reload();
   },
+
   edit(index) {
     Form.fields(Transaction.all[index]);
-    idEdit = Transaction.all[index].id;
-
-    DOM.addTransaction(Transaction.all[index], Transaction.all[index].id)
-    Transaction.remove(index);
-
+    Form.form.classList.add('edit');
+    this.editId = Transaction.all[index].id;
     Modal.toggleModal();
   },
+
   incomes() {
     //somar as entradas
     let income = 0;
@@ -40,6 +39,7 @@ export const Transaction = {
     });
     return income.toFixed(2);
   },
+
   expenses() {
     //somar as saídas
     let expense = 0;
@@ -50,6 +50,7 @@ export const Transaction = {
     });
     return expense.toFixed(2);
   },
+
   total() {
     //entradas - saídas
     return (+Transaction.incomes() + +Transaction.expenses()).toFixed(2);

@@ -4,17 +4,16 @@ import { Transaction } from "./Transaction.js";
 import { TypeTransaction } from "./TypeTransaction.js";
 import { Utils } from "./Utils.js";
 
-let id = 0;
-let idEdit = 0;
-
 export const Form = {
   description: document.querySelector('input#description'),
   amount: document.querySelector('input#amount'),
   date: document.querySelector('input#date'),
+  form: document.querySelector('.formulario'),
   
   getValues() {
     const signal = document.querySelector('.typeIncomes.incomes') !== null ? '' : '-';
     return {
+      id: 0,
       description: Form.description.value,
       amount: signal + Form.amount.value,
       date: Form.date.value,
@@ -29,14 +28,11 @@ export const Form = {
   },
 
   formatValues() {
-    let { description, amount, date } = Form.getValues();
+    let { id, description, amount, date } = Form.getValues();
     amount = Utils.realToDolar(amount);
     date = Utils.formatDate(date);
-    if (idEdit !== 0) {
-      id = idEdit;
-    } else {
-      id = Transaction.all.length + 1;
-    }
+    id = Utils.generateId();
+ 
     return {
       id,
       description,
@@ -57,16 +53,29 @@ export const Form = {
       TypeTransaction.changeType('expenses', TypeTransaction.expenses);
       value.amount = String(value.amount).replace(/\D/g, '');
     }
-    Form.amount.value = Utils.formatAmountForm(value.amount);
+    Form.amount.value = Utils.formatCurrency(value.amount);
     Form.date.value = Utils.formatDateForm(value.date);
   },
   
   submit(event) {
     event.preventDefault();
     try {
-      Form.validateFields();
       const transaction = Form.formatValues();
-      Transaction.add(transaction)
+
+      if(this.form.classList.contains('edit')){
+        Transaction.all.forEach((element) => {
+          if(element.id === Transaction.editId) {
+            element.description = transaction.description;
+            element.amount = transaction.amount;
+            element.date = transaction.date;
+          }
+        })
+        this.form.classList.remove('edit');
+      } else {
+        Form.validateFields();
+        Transaction.add(transaction)
+      }
+
       Form.clearFields();
       Modal.toggleModal();
       App.reload();

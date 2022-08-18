@@ -46,5 +46,35 @@ export const Utils = {
     value = value.replace('.', '');
     value = value.replace(',', '.');
     return value.trim();
-  }
+  },
+
+  /**
+   * Generate a random integer
+   * @param min - min number (number)
+   * @param max - max number (number)
+   * 
+   * @returns an integer between two defined values (min and max).
+   */
+  getRandomInt(min = 1, max = 100) {
+    return (Math.random() * (max - min) + min).toFixed();
+  },
+
+  /**
+   * Generate a new id
+   * Checks if the id exists, if it exists generates a new number and only returns when the id does not exist
+   * 
+   * @returns new id 
+   */
+  generateId() {
+    let newId = Utils.getRandomInt();
+    const idExists = Transaction.all.map(element => {
+      return element.id !== newId ? true : false;
+    })
+
+    if(idExists.indexOf(false) === -1){
+      return newId;
+    } else {
+      this.generateId();
+    }
+  },
 }
