@@ -26,13 +26,14 @@ export const Utils = {
    * @returns formated currency to BR (string)
    */
   formatCurrency(value) {
+    const signal = String(value).substring(0, 1) === '-' ? '-' : '';
     value = String(value).replace(/\D/g, '');
     value = value / 100;
     value = value.toLocaleString('pt-BR', {
       style: 'currency',
       currency: 'BRL'
     })
-    return value;
+    return signal + value;
   },
 
   /**
