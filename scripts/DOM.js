@@ -12,6 +12,7 @@ export const DOM = {
     tr.dataset.index = index
     DOM.transactionsContainer.appendChild(tr);
   },
+
   innerHTMLTransaction(transaction, index) {
     const CSSclass = transaction.amount > 0 ? 'incomes' : 'expenses';
     const html = `
@@ -24,11 +25,13 @@ export const DOM = {
     `
     return html;
   },
+
   updateBalance() {
     document.querySelector('#incomes').innerHTML = Utils.formatCurrency(Transaction.incomes());
     document.querySelector('#expenses').innerHTML = Utils.formatCurrency(Transaction.expenses());
     document.querySelector('#total').innerHTML = Utils.formatCurrency(Transaction.total());
   },
+  
   clearTransactions() {
     DOM.transactionsContainer.innerHTML = '';
   }

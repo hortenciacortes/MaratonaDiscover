@@ -1,19 +1,21 @@
 export const Utils = {
-  formatAmount(value) {
-    value = Number(value) * 100;
-    return Math.round(value);
-  },
-  //Formatando o valor para retornar para o input
-  formatAmountForm(value) {
-    value = Number(value) / 100;
-    return Math.round(value);
-  },
-  //Formatando a data do formato type="date" para o formato utilizado no BR
+  /**
+   * Formatting date for Brazilian date
+   * @param date - 2022-08-25 (string)
+   * 
+   * @returns date formated 25/08/2022 (string)
+   */
   formatDate(date) {
     const splittedDate = date.split('-');
     return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
   },
-  //Formatando a data para o formato do type="date"
+
+  /**
+   * Formatting date for pattern date
+   * @param date - 25/08/2022 (string)
+   * 
+   * @returns date formated 2022-08-25 (string)
+   */
   formatDateForm(date) {
     const splittedDate = date.split('/');
     return `${splittedDate[2]}-${splittedDate[1]}-${splittedDate[0]}`
