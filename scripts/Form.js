@@ -50,8 +50,11 @@ export const Form = {
   fields(value) {
     Form.description.value = value.description;
     if (value.amount < 0) {
+      console.log(value.amount)
       TypeTransaction.changeType('expenses', TypeTransaction.expenses);
       value.amount = String(value.amount).replace(/\D/g, '');
+    } else {
+      TypeTransaction.changeType('incomes', TypeTransaction.incomes);
     }
     Form.amount.value = Utils.formatCurrency(value.amount);
     Form.date.value = Utils.formatDateForm(value.date);
